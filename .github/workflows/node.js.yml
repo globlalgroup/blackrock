@@ -56,5 +56,5 @@ jobs:
         ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "sudo systemctl stop blackrock.service"
         ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "mkdir -p /var/www/blackrock"
         rsync -avz -e "ssh -p ${{ secrets.SERVER_PORT }}" --exclude '.git' ./ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/blackrock/
-        ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "npm ci"
+        ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "/root/.nvm/versions/node/v22.21.0/bin/npm ci"
         ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "sudo systemctl start blackrock.service"
