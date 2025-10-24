@@ -21,23 +21,39 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+#    - name: Use Node.js ${{ matrix.node-version }}
+#      uses: actions/setup-node@v4
+#      with:
+#        node-version: ${{ matrix.node-version }}
+#        cache: 'npm'
+#
+#    - name: Install dependencies
+#      run: npm ci
+#
+#    - name: Clean build artifacts
+#      run: npm run clean
+#
+#    - name: TypeScript check
+#      run: npm run build:check
+#
+#    - name: Lint code
+#      run: npm run lint
+#
+#    - name: Build project
+#      run: npm run build
 
-    - name: Install dependencies
-      run: npm ci
+    - name: Install SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
 
-    - name: Clean build artifacts
-      run: npm run clean
-
-    - name: TypeScript check
-      run: npm run build:check
-
-    - name: Lint code
-      run: npm run lint
-
-    - name: Build project
-      run: npm run build
+    - name: Deploy to server
+      run: |
+        ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "sudo systemctl daemon-reload"
+        ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "sudo systemctl stop blackrock.service"
+        ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "mkdir -p /var/www/blackrock"
+        rsync -avz -e "ssh -p ${{ secrets.SERVER_PORT }}" ./publish/YelcoTradeBot.Jobs/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/blackrock/
+        ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "sudo systemctl start blackrock.service"
