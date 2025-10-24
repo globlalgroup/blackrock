@@ -1,0 +1,123 @@
+[
+  {
+    "symbol": "AAPL",
+    "market_cap_rank": "6",
+    "image": "<AppleIcon />",
+    "name": "Apple",
+    "current_price": "1900",
+    "price_change_percentage_1h_in_currency": "1.42",
+    "price_change_percentage_24h_in_currency": "1.10",
+    "circulating_supply": "102",
+    "total_volume": "770,003"
+  },
+  {
+    "symbol": "TSLA",
+    "market_cap_rank": "6",
+    "image": "<TeslaIcon />",
+    "name": "TESLA",
+    "current_price": "10000",
+    "price_change_percentage_1h_in_currency": "-4.72",
+    "price_change_percentage_24h_in_currency": "80",
+    "circulating_supply": "15,000",
+    "total_volume": "1,400"
+  },
+  {
+    "symbol": "YPF",
+    "market_cap_rank": "7",
+    "image": "<YPFIcon />",
+    "name": "YPF",
+    "current_price": "31",
+    "price_change_percentage_1h_in_currency": "2.41",
+    "price_change_percentage_24h_in_currency": "3.10",
+    "circulating_supply": "63,000,000",
+    "total_volume": "3,900,000"
+  },
+  {
+    "symbol": "NVIDIA",
+    "market_cap_rank": "8",
+    "image": "<NVIDIAIcon />",
+    "name": "Nvidia",
+    "current_price": "1160",
+    "price_change_percentage_1h_in_currency": "7.61",
+    "price_change_percentage_24h_in_currency": "2.50",
+    "circulating_supply": "900.000.000",
+    "total_volume": "22.300.000"
+  },
+  {
+    "symbol": "JPM",
+    "market_cap_rank": "9",
+    "image": "<JPMIcon />",
+    "name": "J.P. Morgan",
+    "current_price": "1500",
+    "price_change_percentage_1h_in_currency": "0.94",
+    "price_change_percentage_24h_in_currency": "1.55",
+    "circulating_supply": "450,000,000",
+    "total_volume": "15,700,000"
+  },
+  {
+    "symbol": "BBVA",
+    "market_cap_rank": "10",
+    "image": "<BBVAIcon />",
+    "name": "BBVA",
+    "current_price": "144",
+    "price_change_percentage_1h_in_currency": "0.04",
+    "price_change_percentage_24h_in_currency": "1.50",
+    "circulating_supply": "650,000,000",
+    "total_volume": "8,700,000"
+  },
+  {
+    "symbol": "PEMEX",
+    "market_cap_rank": "11",
+    "image": "pemex.svg",
+    "name": "PEMEX",
+    "current_price": "14",
+    "price_change_percentage_1h_in_currency": "1.22",
+    "price_change_percentage_24h_in_currency": "3.15",
+    "circulating_supply": "38,000,000",
+    "total_volume": "4,150,000"
+  },
+  {
+    "symbol": "GOLD",
+    "market_cap_rank": "12",
+    "image": "gold.svg",
+    "name": "Oro",
+    "current_price": "4001",
+    "price_change_percentage_1h_in_currency": "486.27",
+    "price_change_percentage_24h_in_currency": "1.10",
+    "circulating_supply": "2.900.000.000",
+    "total_volume": "42.000.000"
+  },
+  {
+    "symbol": "NATGAS",
+    "market_cap_rank": "13",
+    "image": "natgas.svg",
+    "name": "Gas Natural",
+    "current_price": 3.7055,
+    "price_change_percentage_1h_in_currency": "4.65",
+    "price_change_percentage_24h_in_currency": "5.20",
+    "circulating_supply": 2900000000,
+    "total_volume": 42000000
+  },
+  {
+    "symbol": "BRENT",
+    "market_cap_rank": "14",
+    "image": "brent.svg",
+    "name": "Petróleo Brent",
+    "current_price": "467",
+    "price_change_percentage_1h_in_currency": "-1.05",
+    "price_change_percentage_24h_in_currency": "2.00",
+    "circulating_supply": "920,000,000",
+    "total_volume": "7,400,000"
+  },
+  {
+    "symbol": "EUR/USD",
+    "market_cap_rank": "15",
+    "image": "euro.svg",
+    "name": "Euro/Dólar",
+    "current_price": 1.08,
+    "price_change_percentage_1h_in_currency": "0.10",
+    "price_change_percentage_24h_in_currency": "0.50",
+    "circulating_supply": 1200000000,
+    "total_volume": 50000000
+  }
+]

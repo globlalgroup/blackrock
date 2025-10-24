@@ -1,0 +1,50 @@
+Jul 17 20:31:08 blackrock-server landing-web[55898]: [1]     redirected: false,
+Jul 17 20:31:08 blackrock-server landing-web[55898]: [1]     type: 'default',
+Jul 17 20:31:08 blackrock-server landing-web[55898]: [1]     url: 'https://api.web3modal.org/appkit/v1/config?st=appkit&sv=react-wagmi-1.7.13'
+Jul 17 20:31:08 blackrock-server landing-web[55898]: [1]   }
+Jul 17 20:31:08 blackrock-server landing-web[55898]: [1] }
+Jul 17 20:31:08 blackrock-server landing-web[55898]: [1]  GET /retiroCard 200 in 34561ms
+Jul 17 20:31:08 blackrock-server landing-web[55898]: [1] Project ID Not Configured - update configuration on cloud.reown.com
+Jul 17 20:31:10 blackrock-server landing-web[55898]: [1]  ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
+Jul 17 20:31:10 blackrock-server landing-web[55898]: [1]  ⚠ Blocked cross-origin request from blackrockdpto.net to /_next/* resource. To allow this, configure "allowedDevOrigins" in next.config
+Jul 17 20:31:10 blackrock-server landing-web[55898]: [1] Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+Jul 17 20:31:10 blackrock-server landing-web[55898]: [1]  HEAD /retiroCard 200 in 126ms
+Jul 17 20:31:11 blackrock-server landing-web[55898]: [1]  HEAD /retiroCard 200 in 127ms
+Jul 17 20:31:28 blackrock-server landing-web[55898]: [1]  ○ Compiling /api/sndMailCardRetiro2 ...
+Jul 17 20:31:32 blackrock-server landing-web[55898]: [1]  ✓ Compiled /api/sndMailCardRetiro2 in 4.7s (6960 modules)
+Jul 17 20:33:32 blackrock-server landing-web[55898]: [1] Error enviando correo: [Error: Connection timeout] { code: 'ETIMEDOUT', command: 'CONN' }
+Jul 17 20:33:32 blackrock-server landing-web[55898]: [1]  POST /api/sndMailCardRetiro2 500 in 124867ms
+Jul 17 20:34:15 blackrock-server landing-web[55898]: [1]  GET /api/sndMailCardRetiro2 405 in 14ms
+Jul 17 20:35:53 blackrock-server landing-web[55898]: [1] Error enviando correo: [Error: Connection timeout] { code: 'ETIMEDOUT', command: 'CONN' }
+Jul 17 20:35:53 blackrock-server landing-web[55898]: [1]  POST /api/sndMailCardRetiro2 500 in 120014ms
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1] Project ID Not Configured - update configuration on cloud.reown.com
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1] Multiple versions of Lit loaded. Loading multiple versions is not recommended. See https://lit.dev/msg/multiple-versions for more information.
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]  GET /retiroCard 200 in 1055ms
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1] [Reown Config] Failed to fetch remote project configuration. Using local/default values. [Error: HTTP status code: 403] {
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]   [cause]: Response {
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     status: 403,
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     statusText: 'Forbidden',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     headers: Headers {
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       date: 'Thu, 17 Jul 2025 20:37:28 GMT',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       'content-type': 'text/plain; charset=UTF-8',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       'content-length': '9',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       connection: 'keep-alive',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       'access-control-allow-origin': '*',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       'cache-control': 'public, max-age=300, s-maxage=300',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       vary: 'Accept-Encoding',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       server: 'cloudflare',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       'cf-ray': '960c89961f9f0f45-EWR',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]       'alt-svc': 'h3=":443"; ma=86400'
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     },
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     body: undefined,
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     bodyUsed: false,
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     ok: false,
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     redirected: false,
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     type: 'default',
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]     url: 'https://api.web3modal.org/appkit/v1/config?st=appkit&sv=react-wagmi-1.7.13'
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1]   }
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1] }
+Jul 17 20:37:28 blackrock-server landing-web[55898]: [1] Project ID Not Configured - update configuration on cloud.reown.com
+Jul 17 20:37:34 blackrock-server landing-web[55898]: [1]  HEAD /retiroCard 200 in 122ms
+Jul 17 20:37:34 blackrock-server landing-web[55898]: [1]  HEAD /retiroCard 200 in 162ms
+Jul 17 20:37:34 blackrock-server landing-web[55898]: [1]  HEAD /retiroCard 200 in 200ms

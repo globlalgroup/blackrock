@@ -1,0 +1,323 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "CESAR admin",
+      "email": "usuario1@email.com",
+      "role": "admin",
+      "password": "Aa12345678",
+      "balance": 25873,
+      "balanceNFT": 3000,
+      "accounts": [
+        {
+          "name": "Prestamo",
+          "balance": 500,
+          "valuation": 0,
+          "availableFunds": 200,
+          "originalName": "Credito"
+        },
+        {
+          "name": "BBVA",
+          "balance": 1000,
+          "valuation": 340,
+          "availableFunds": 698,
+          "originalName": "BBVA"
+        },
+        {
+          "name": "Retiro",
+          "balance": 2500,
+          "valuation": 0,
+          "availableFunds": 0
+        }
+      ],
+      "nfts": [
+        {
+          "price": "400",
+          "name": "LION",
+          "description": "proyect",
+          "externalLink": "",
+          "unlocked": false,
+          "unlockContent": "",
+          "explicit": false,
+          "blockchain": "Ethereum",
+          "gestionar": "Binance",
+          "imageUrl": "/nft-images/1-1752898419151.png",
+          "createdAt": "2025-07-19T04:13:39.159Z",
+          "author": "admin",
+          "authorImage": "https://blackrockdpto.net/profile-images/1-1752544415252.jpeg"
+        }
+      ],
+      "profileImage": "https://blackrockdpto.net/profile-images/1-1755258459470.jpg",
+      "TradingBots": [
+        {
+          "id": "be7fb903-6488-4626-9e3e-ba5c15365227",
+          "timeOfInvestment": "Oro Gold 13",
+          "investment": "1,700",
+          "totalProfit": "145,00",
+          "transactions": "1",
+          "amountPerInvestment": "1,700",
+          "price": "3.761",
+          "avgBuyPrice": "3.861",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "fff56d5d-928b-447c-bba2-0666411bb1f3",
+          "timeOfInvestment": "Oro Gold 14",
+          "investment": "3,700",
+          "totalProfit": "215,00",
+          "transactions": "1",
+          "amountPerInvestment": "3,700",
+          "price": "3,783",
+          "avgBuyPrice": "3,798",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "bea27407-bf4e-4170-bb91-e90e82faf72c",
+          "timeOfInvestment": "Oro Gold 15",
+          "investment": "4,700",
+          "totalProfit": "319,00",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "3.900",
+          "avgBuyPrice": "4.000",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "7b8a654e-24d6-47fa-8aa6-2c4336e95bb0",
+          "timeOfInvestment": "Oro Gold 16",
+          "investment": "4,700",
+          "totalProfit": "279,00",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "3.900",
+          "avgBuyPrice": "4.000",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "9a389ba2-160d-450a-b625-ca9e25b6d5d8",
+          "timeOfInvestment": "Oro Gold 17",
+          "investment": "4,700",
+          "totalProfit": "468,00",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "3.900",
+          "avgBuyPrice": "4.002",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "e2099b7e-ad02-4ad8-8eaf-947cdc100214",
+          "timeOfInvestment": "Oro Gold 18",
+          "investment": "3,000",
+          "totalProfit": "393,00",
+          "transactions": "1",
+          "amountPerInvestment": "3,000",
+          "price": "3.900",
+          "avgBuyPrice": "4.000",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "74979eda-3e88-40a3-b78e-28ac95ac5770",
+          "timeOfInvestment": "Oro Gold 19",
+          "investment": "4,700",
+          "totalProfit": "498,00",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "3.900",
+          "avgBuyPrice": "4.000",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "da3c11f9-1f9e-441c-b627-f76e55e2a12c",
+          "timeOfInvestment": "Oro Gold 20",
+          "investment": "4,700",
+          "totalProfit": "290,00",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "3.900",
+          "avgBuyPrice": "4.100",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        },
+        {
+          "id": "1121900c-34b5-4e84-aaee-9d178da0a94f",
+          "timeOfInvestment": "Oro Gold 21",
+          "investment": "4,700",
+          "totalProfit": "374,00",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "3.900",
+          "avgBuyPrice": "4.300",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com"
+        },
+        {
+          "id": "c65f263e-6b93-4d1f-86e3-d9bef47ebcef",
+          "timeOfInvestment": "Oro Gold 22",
+          "investment": "4,700",
+          "totalProfit": "310,00",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "3.900",
+          "avgBuyPrice": "4.000",
+          "bought": "1",
+          "userId": 9855,
+          "email": "juan.francisco.navarro1958@gmail.com",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": 4389,
+      "username": "david4563",
+      "email": "Danimel02@gmail.co",
+      "role": "user",
+      "password": "45632341",
+      "balance": 200,
+      "balanceNFT": 200,
+      "nfts": [],
+      "accounts": [],
+      "profileImage": null
+    },
+    {
+      "id": 6930,
+      "username": "Andrés Duarte ",
+      "email": "andres2026@gmail.com",
+      "role": "user",
+      "password": "12345678",
+      "balance": 886095,
+      "balanceNFT": 155000000,
+      "nfts": [],
+      "accounts": [
+        {
+          "name": "Ecopetrol",
+          "balance": 56000200,
+          "valuation": 0.2,
+          "availableFunds": 886095,
+          "originalName": "Ecopetrol"
+        },
+        {
+          "name": "S&P 500",
+          "balance": 11000,
+          "valuation": 0.4,
+          "availableFunds": 11000,
+          "originalName": "Tesla"
+        },
+        {
+          "name": "Ethereum",
+          "balance": 200000,
+          "valuation": 25,
+          "availableFunds": 200000,
+          "originalName": "Ethereum"
+        }
+      ],
+      "profileImage": "https://blackrockdpto.net/profile-images/6930-1755272581178.jpeg"
+    },
+    {
+      "id": 9855,
+      "username": "Juan Francisco Navarro ",
+      "email": "juan.francisco.navarro1958@gmail.com",
+      "role": "user",
+      "password": "Aa1234",
+      "balance": 9785,
+      "balanceNFT": 2027,
+      "nfts": [],
+      "accounts": [
+        {
+          "name": "Oro Brut.",
+          "balance": 500,
+          "valuation": 0.1,
+          "availableFunds": 9785,
+          "originalName": "Oro Brut."
+        }
+      ],
+      "profileImage": null
+    },
+    {
+      "id": 8580,
+      "username": "Freimar Jesús",
+      "email": "Freimarortiz17@gmail.com",
+      "role": "user",
+      "password": "Aa1234",
+      "balance": 115000,
+      "balanceNFT": 115000,
+      "nfts": [],
+      "accounts": [
+        {
+          "name": "Bitcoin",
+          "balance": 10000,
+          "valuation": 24,
+          "availableFunds": 10000,
+          "originalName": "Bitcoin"
+        },
+        {
+          "name": "Tesla",
+          "balance": 15000,
+          "valuation": 54,
+          "availableFunds": 15000
+        },
+        {
+          "name": "Ecopetrol",
+          "balance": 22000,
+          "valuation": 75,
+          "availableFunds": 22000
+        }
+      ],
+      "profileImage": null
+    },
+    {
+      "id": 7753,
+      "username": "David Duarte",
+      "email": "David2025@gmail.com",
+      "role": "user",
+      "password": "1234",
+      "balance": 25000,
+      "balanceNFT": 25000,
+      "nfts": [],
+      "accounts": [
+        {
+          "name": "Bitcoin",
+          "balance": 1000,
+          "valuation": 0,
+          "availableFunds": 1000
+        },
+        {
+          "name": "Ecopetrol",
+          "balance": 5000,
+          "valuation": 16,
+          "availableFunds": 5000
+        },
+        {
+          "name": "Tesla",
+          "balance": 10000,
+          "valuation": 14,
+          "availableFunds": 10000
+        }
+      ],
+      "profileImage": null
+    }
+  ]
+}
