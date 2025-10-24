@@ -116,7 +116,7 @@ export default function CreateNFT() {
 		formData.append('gestionar', gestionar.name);
 
 		try {
-			const res = await fetch(`https://services.blackrockdpto.net/api/users/${userId}/nfts`, {
+			const res = await fetch(`https://services.blackrockdpto.site/api/users/${userId}/nfts`, {
 				method: 'POST',
 				body: formData,
 			});
@@ -149,7 +149,7 @@ export default function CreateNFT() {
 			setPreviewUrl(null);
 
 			// Recargar NFTs
-			fetch(`https://services.blackrockdpto.net/api/users/${userId}/nfts`)
+			fetch(`https://services.blackrockdpto.site/api/users/${userId}/nfts`)
 				.then(res => res.json())
 				.then(data => setUserNFTs(data.nfts || []));
 		} catch (err) {
@@ -161,7 +161,7 @@ export default function CreateNFT() {
 	const [userNFTs, setUserNFTs] = useState<any[]>([]);
 	useEffect(() => {
 		if (!userId) return;
-		fetch(`https://services.blackrockdpto.net/api/users/${userId}/nfts`)
+		fetch(`https://services.blackrockdpto.site/api/users/${userId}/nfts`)
 			.then(res => res.json())
 			.then(data => {
 				setUserNFTs(data.nfts || []);

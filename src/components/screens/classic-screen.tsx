@@ -34,7 +34,7 @@ export default function ClassicScreen() {
 
   // 🔹 Obtener la imagen de perfil desde el backend
   useEffect(() => {
-    fetch(`https://services.blackrockdpto.net/api/users`)
+    fetch(`https://services.blackrockdpto.site/api/users`)
       .then((res) => res.json())
       .then((data) => {
         const user = data.users.find((u: any) => u.id === userId);

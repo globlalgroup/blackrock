@@ -43,7 +43,7 @@ export default function ModernScreen() {
       const userData = JSON.parse(storedUser);
       setUserId(userData.id);
       // Obtener datos actualizados del backend
-      fetch(`https://services.blackrockdpto.net/api/users`)
+      fetch(`https://services.blackrockdpto.site/api/users`)
         .then((res) => res.json())
         .then((data) => {
           const user = data.users.find((u: any) => u.id === userData.id);

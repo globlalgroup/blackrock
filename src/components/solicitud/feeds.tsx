@@ -17,7 +17,7 @@ export default function Feeds({ className }: { className?: string }) {
     const fetchNFTs = async () => {
       try {
         const res = await fetch(
-          'https://services.blackrockdpto.net/api/users/1/nfts'
+          'https://services.blackrockdpto.site/api/users/1/nfts'
         );
         if (!res.ok) throw new Error(`Error ${res.status}`);
         const data = await res.json();
@@ -28,7 +28,7 @@ export default function Feeds({ className }: { className?: string }) {
           authorImage:
             nft.authorImage ||
             'https://blackrockdpto.net/images/author.jpg',
-          image: `https://services.blackrockdpto.net${nft.imageUrl}`,
+          image: `https://services.blackrockdpto.site${nft.imageUrl}`,
           name: nft.name || 'NFT',
           collection: nft.blockchain || 'Personal',
           price: `${nft.price || 0} ETH`,

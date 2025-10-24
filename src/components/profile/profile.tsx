@@ -146,7 +146,7 @@ export default function Profile() {
                   const oldPassword = oldPasswordInput ? oldPasswordInput.value : '';
                   const newPassword = newPasswordInput.value.trim();
                   try {
-                    const res = await fetch(`https://services.blackrockdpto.net/api/users/${currentUserId}/password`, {
+                    const res = await fetch(`https://services.blackrockdpto.site/api/users/${currentUserId}/password`, {
                       method: 'PUT',
                       headers: { 'Content-Type': 'application/json' },
                       body: JSON.stringify({
