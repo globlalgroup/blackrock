@@ -37,7 +37,7 @@ export default function CollectionCard({ item, className = '' }: CardProps) {
   useEffect(() => {
     // Si el usuario tiene id, intenta traer el avatar desde el backend
     if (user?.id) {
-      fetch(`https://blackrockdpto.net/api/users`)
+      fetch(`https://blackrockdpto.site/api/users`)
         .then((res) => res.json())
         .then((data) => {
           const foundUser = data.users.find((u: any) => u.id === user.id);

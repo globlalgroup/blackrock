@@ -27,7 +27,7 @@ const AuthorProfilePageRetro = () => {
   // useEffect que consulta al backend y actualiza profileImage
   useEffect(() => {
     if (!userId) return;
-    fetch(`https://blackrockdpto.net/api/users`)
+    fetch(`https://blackrockdpto.site/api/users`)
       .then((res) => res.json())
       .then((data) => {
         const user = data.users.find((u: any) => u.id === userId);

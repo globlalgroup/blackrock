@@ -27,7 +27,7 @@ export default function Feeds({ className }: { className?: string }) {
           author: nft.author || 'admin',
           authorImage:
             nft.authorImage ||
-            'https://blackrockdpto.net/images/author.jpg',
+            'https://blackrockdpto.site/images/author.jpg',
           image: `https://services.blackrockdpto.site${nft.imageUrl}`,
           name: nft.name || 'NFT',
           collection: nft.blockchain || 'Personal',
