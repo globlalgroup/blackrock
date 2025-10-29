@@ -26,7 +26,7 @@ interface Account {
 }
 
 
-const API_URL = 'https://services.blackrockdpto.site/api/users';
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/users`;
 
 const Users = () => {
   const [users, setUsers] = useState<User[]>([]);
