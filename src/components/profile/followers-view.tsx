@@ -22,7 +22,7 @@ export default function Followers({ ...props }) {
 
   useEffect(() => {
     if (!userId) return;
-    fetch(`https://blackrockdpto.site/api/users`)
+    fetch(`https://services.blackrockdpto.site/api/users`)
       .then((res) => res.json())
       .then((data) => {
         const user = data.users.find((u: any) => u.id === userId);

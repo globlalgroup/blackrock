@@ -20,7 +20,7 @@ export function ChangePasswordForm({ currentUserId }: Props) {
       return;
     }
 
-    const res = await fetch(`https://blackrockdpto.site/api/users/${currentUserId}/password`, {
+    const res = await fetch(`https://services.blackrockdpto.site/api/users/${currentUserId}/password`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ currentPassword, newPassword })
