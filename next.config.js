@@ -36,7 +36,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['blackrockdpto.site', 'localhost'],
+    domains: ['globalstockmarketssmltrd.site', 'localhost'],
     remotePatterns: [
       {
         protocol: 'http',
@@ -46,7 +46,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'blackrockdpto.site',
+        hostname: 'globalstockmarketssmltrd.site',
         pathname: '/profile-images/**',
       },
     ],

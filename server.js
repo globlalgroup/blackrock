@@ -8,7 +8,7 @@ const multer = require('multer');
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'https://blackrockdpto.site',
+  origin: 'https://globalstockmarketssmltrd.site',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -96,7 +96,7 @@ app.post('/api/users/:id/profile-image', upload.single('image'), (req, res) => {
     return res.status(404).json({ error: 'Usuario no encontrado' });
   }
   // Guarda la URL absoluta de la imagen en el usuario
-  const DOMAIN = "https://blackrockdpto.site";
+  const DOMAIN = "https://globalstockmarketssmltrd.site";
   const imageUrl = `${DOMAIN}/profile-images/${req.file.filename}`;
   users[userIndex].profileImage = imageUrl;
   fs.writeFileSync(USERS_FILE, JSON.stringify({ users }, null, 2));
