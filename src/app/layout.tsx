@@ -14,8 +14,8 @@ import '@/assets/css/scrollbar.css';
 import '@/assets/css/globals.css';
 
 export const metadata: Metadata = {
-  title: 'BLACKROCK',
-  description: 'BLACKROCK - Crypto Dashboard',
+  title: 'GLOBAL STOCK',
+  description: 'GLOBAL STOCK - Crypto Dashboard',
   icons: {
     icon: {
       url: '/favicon.ico',
