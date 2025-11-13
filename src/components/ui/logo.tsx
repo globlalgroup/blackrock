@@ -30,9 +30,9 @@ export default function Logo({ className }: LogoPropTypes) {
       >
         <span className="relative flex overflow-hidden">
           {isDarkMode ? (
-            <Image src="/logoLight.png" alt="Criptic" width={143} height={24} priority />
+            <Image src="/logoLigh.png" alt="Criptic" width={143} height={24} priority />
           ) : (
-            <Image src="/Logo.png" alt="Criptic" width={143} height={24} priority />
+            <Image src="/Log.png" alt="Criptic" width={143} height={24} priority />
           )}
         </span>
       </AnchorLink>
