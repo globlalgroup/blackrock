@@ -14,7 +14,7 @@ const initialUser = {
   id: 157896,
   name: 'Inversionista asociado ',
   user_name: 'BlackRockInvestment',
-  wallet_key: '0x9Af568442868356c7aE834A47614600002545476555555555772d9F5B87e9b',
+  wallet_key: '0xdF0AaD952C482a19A5B44116b609Fd042BC0C708',
   following: 101240,
   followers: 15556700,
 };

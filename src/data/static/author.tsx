@@ -14,7 +14,7 @@ export const authorData = {
   name: 'Inversionista asociado',
   user_name: 'BlackRockInvestment',
   wallet_key:
-    '0x9Af568442868356c7aE834A47614600002545476555555555772d9F5B87e9b',
+    '0xdF0AaD952C482a19A5B44116b609Fd042BC0C708',
   created_at: 'November 2021',
   cover_image: {
     id: 1,
