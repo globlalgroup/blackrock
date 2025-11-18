@@ -34,7 +34,7 @@ export default function SignIn() {
               Welcome Back!
             </h2>
             <p className="text-sm text-[#4B5563] dark:text-gray-300">
-              Please login with your 
+              Please login with your info
             </p>
           </div>
           <button className="flex w-full items-center justify-center gap-2.5 rounded-md border-2 border-[#F3F4F6] bg-[#F3F4F6] py-2 text-sm font-medium text-black transition-all hover:bg-transparent dark:border-brand dark:bg-brand dark:text-gray-300 dark:hover:bg-transparent sm:rounded-lg sm:tracking-[0.04em]">
