@@ -211,15 +211,15 @@
       "email": "julojim23@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 405,
-      "balanceNFT": 405,
+      "balance": 500,
+      "balanceNFT": 500,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8850",
           "balance": 286,
           "valuation": 25,
-          "availableFunds": 405,
+          "availableFunds": 500,
           "originalName": "ETF1-8850"
         }
       ],
@@ -432,6 +432,19 @@
           "bought": "8",
           "userId": 8990,
           "email": "Aldanacorreo841@gmail.com"
+        },
+        {
+          "id": "3c36c76f-4ec3-450d-83dc-76770787417f",
+          "timeOfInvestment": "udacvuj",
+          "investment": "11",
+          "totalProfit": "11",
+          "transactions": "1",
+          "amountPerInvestment": "111",
+          "price": "11",
+          "avgBuyPrice": "1",
+          "bought": "1",
+          "userId": 8256,
+          "email": "usuario1@email.com"
         }
       ]
     },
