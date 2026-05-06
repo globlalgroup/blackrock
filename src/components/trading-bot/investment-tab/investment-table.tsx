@@ -8,7 +8,7 @@ import Button from '@/components/ui/button';
 import usersData from '@/data/users.json';
 
 const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/users/`;
-const ADMIN_ID = 1; // Cambia este valor si el id del admin es diferente
+const ALL_BOTS_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/trading-bots`;
 
 const PAIRS = [
   { value: 'BTC/USDT', icon: <FaBitcoin size={22} color="#F7931A" />, label: 'BTC/USDT' },
@@ -18,7 +18,7 @@ const PAIRS = [
 ];
 
 interface Investment {
-  id?: string; // <-- ESTE es el ID único del bot (botId)           // ← Agrega esta línea
+  id?: string;
   timeOfInvestment: { icon: React.ReactNode; label: string } | string;
   investment: string;
   totalProfit: string;
@@ -37,7 +37,6 @@ interface UserData {
   role: string;
 }
 
-// Columna de encender/apagar
 function getColumns(handleToggleEnabled: (index: number) => void) {
   return [
     {
@@ -46,7 +45,6 @@ function getColumns(handleToggleEnabled: (index: number) => void) {
       ),
       accessor: 'timeOfInvestment',
       Cell: ({ cell: { value } }: { cell: { value: Investment['timeOfInvestment'] } }) => {
-        // Si value es un objeto con icon y label, lo mostramos, si no, solo el texto
         if (typeof value === 'object' && value !== null && 'icon' in value && 'label' in value) {
           return (
             <div className="flex items-center gap-3">
@@ -181,7 +179,7 @@ export default function InvestmentTable() {
   const [data, setData] = useState<Investment[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState<Investment>({
-    timeOfInvestment: '', // Ahora inicia vacío
+    timeOfInvestment: '',
     investment: '',
     totalProfit: '',
     transactions: '',
@@ -213,39 +211,65 @@ export default function InvestmentTable() {
     }
   }, []);
 
-  // 2. Mostrar solo inversiones asociadas al usuario logueado, excepto admin (id=1) que ve todas
+  // ✅ FIX 1: Admin usa /api/trading-bots para ver TODOS los bots.
+  // Usuario normal usa /api/users/:id/trading-bots y filtra por su propio userId.
   useEffect(() => {
     if (!userId || !userRole) return;
-    const fetchId = userRole === 'admin' ? userId : ADMIN_ID;
-    fetch(`${API_URL}${fetchId}/trading-bots`)
-      .then(async res => {
-        const text = await res.text();
-        try {
-          const json = JSON.parse(text);
-          let filtered = (json.TradingBots || []);
-          if (!(userRole === 'admin' && userId === 1)) {
-            filtered = filtered.filter((item: any) => Number(item.userId) === userId);
+
+    if (userRole === 'admin') {
+      // Admin: obtiene todos los bots de todos los usuarios
+      fetch(ALL_BOTS_URL)
+        .then(async res => {
+          const text = await res.text();
+          try {
+            const json = JSON.parse(text);
+            setData(
+              (json.TradingBots || []).map((item: any) => {
+                const pair = PAIRS.find(p => p.value === (item.timeOfInvestment?.label || item.timeOfInvestment || item.pair));
+                return {
+                  ...item,
+                  timeOfInvestment: pair
+                    ? { icon: pair.icon, label: pair.label }
+                    : typeof item.timeOfInvestment === 'object'
+                    ? item.timeOfInvestment
+                    : { icon: null, label: item.timeOfInvestment },
+                };
+              })
+            );
+          } catch {
+            setData([]);
           }
-          setData(
-            filtered.map((item: any) => {
-              const pair = PAIRS.find(p => p.value === (item.timeOfInvestment.label || item.timeOfInvestment || item.pair));
-              return {
-                ...item,
-                timeOfInvestment: pair
-                  ? { icon: pair.icon, label: pair.label }
-                  : typeof item.timeOfInvestment === 'object'
-                  ? item.timeOfInvestment
-                  : { icon: null, label: item.timeOfInvestment },
-              };
-            })
-          );
-        } catch (err) {
-          setData([]);
-        }
-      })
-      .catch(() => {
-        setData([]);
-      });
+        })
+        .catch(() => setData([]));
+    } else {
+      // Usuario normal: obtiene solo sus propios bots filtrando por userId
+      fetch(`${API_URL}${userId}/trading-bots`)
+        .then(async res => {
+          const text = await res.text();
+          try {
+            const json = JSON.parse(text);
+            const filtered = (json.TradingBots || []).filter(
+              (item: any) => Number(item.userId) === userId
+            );
+            setData(
+              filtered.map((item: any) => {
+                const pair = PAIRS.find(p => p.value === (item.timeOfInvestment?.label || item.timeOfInvestment || item.pair));
+                return {
+                  ...item,
+                  timeOfInvestment: pair
+                    ? { icon: pair.icon, label: pair.label }
+                    : typeof item.timeOfInvestment === 'object'
+                    ? item.timeOfInvestment
+                    : { icon: null, label: item.timeOfInvestment },
+                };
+              })
+            );
+          } catch {
+            setData([]);
+          }
+        })
+        .catch(() => setData([]));
+    }
   }, [userId, userRole]);
 
   useEffect(() => {
@@ -261,7 +285,6 @@ export default function InvestmentTable() {
         }
       })
       .catch(() => {
-        // Si falla, puedes dejar los usuarios locales como fallback
         if (usersData && Array.isArray(usersData.users)) {
           setUsers(usersData.users.map((u: any) => ({
             id: u.id,
@@ -271,6 +294,28 @@ export default function InvestmentTable() {
         }
       });
   }, []);
+
+  // Función auxiliar para recargar todos los bots (admin) o los del usuario
+  async function reloadBots() {
+    if (!userId || !userRole) return;
+    if (userRole === 'admin') {
+      const res = await fetch(ALL_BOTS_URL);
+      const json = await res.json();
+      setData(
+        (json.TradingBots || []).map((item: any) => {
+          const pair = PAIRS.find(p => p.value === (item.timeOfInvestment?.label || item.timeOfInvestment || item.pair));
+          return {
+            ...item,
+            timeOfInvestment: pair
+              ? { icon: pair.icon, label: pair.label }
+              : typeof item.timeOfInvestment === 'object'
+              ? item.timeOfInvestment
+              : { icon: null, label: item.timeOfInvestment },
+          };
+        })
+      );
+    }
+  }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     if (e.target.name === 'timeOfInvestment') {
@@ -283,14 +328,13 @@ export default function InvestmentTable() {
     }
   }
 
-  // 1. Al crear una inversión, guardar id y correo del usuario seleccionado
   function handleUserChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const selectedId = Number(e.target.value);
     setSelectedUserId(selectedId);
     setForm({ ...form, userId: selectedId });
     const user = users.find(u => u.id === selectedId);
     setSelectedUserEmail(user?.email || '');
-    setForm(prev => ({ ...prev, email: user?.email || '' })); // Asegura que el email también se guarde en el form
+    setForm(prev => ({ ...prev, userId: selectedId, email: user?.email || '' }));
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -298,7 +342,7 @@ export default function InvestmentTable() {
     if (!userId || userRole !== 'admin') return;
     setLoading(true);
 
-    // Prepara el valor para guardar (solo el label en la base de datos)
+    const targetUserId = selectedUserId ?? form.userId ?? userId;
 
     const preparedForm = {
       ...form,
@@ -306,45 +350,51 @@ export default function InvestmentTable() {
         typeof form.timeOfInvestment === 'object'
           ? form.timeOfInvestment.label
           : form.timeOfInvestment,
-      userId: selectedUserId ?? form.userId,
+      userId: targetUserId,
       email: selectedUserEmail || form.email || '',
     };
 
-
-    if (form.id) {
-      try {
-        const res = await fetch(`${API_URL}${ADMIN_ID}/trading-bots/${form.id}`, {
-
+    try {
+      if (form.id) {
+        // ✅ EDIT: usa el userId del dueño del bot (selectedUserId), no el del admin
+        const res = await fetch(`${API_URL}${targetUserId}/trading-bots/${form.id}`, {
           method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(preparedForm),
+        });
+        if (res.ok) {
+          await reloadBots();
+          alert('Inversión actualizada correctamente');
+          setShowForm(false);
+          setEditIndex(null);
+          setForm({
+            timeOfInvestment: '',
+            investment: '',
+            totalProfit: '',
+            transactions: '',
+            amountPerInvestment: '',
+            price: '',
+            avgBuyPrice: '',
+            bought: '',
+            enabled: false,
+            id: undefined,
+          });
+        }
+      } else {
+        // ✅ FIX 3: al crear, usa selectedUserId (el usuario elegido en el form), no el userId del admin
+        const res = await fetch(`${API_URL}${targetUserId}/trading-bots`, {
+          method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(preparedForm),
         });
         const text = await res.text();
         let json;
-        try {
-          json = JSON.parse(text);
-        } catch (err) {
-          setLoading(false);
-          return;
-        }
+        try { json = JSON.parse(text); } catch { setLoading(false); return; }
         if (res.ok) {
-          setData(
-            (json.TradingBots || []).map((item: any) => {
-              const pair = PAIRS.find(p => p.value === (item.timeOfInvestment.label || item.timeOfInvestment || item.pair));
-              return {
-                ...item,
-                timeOfInvestment: pair
-                  ? { icon: pair.icon, label: pair.label }
-                  : typeof item.timeOfInvestment === 'object'
-                  ? item.timeOfInvestment
-                  : { icon: null, label: item.timeOfInvestment },
-              };
-            })
-          );
+          await reloadBots();
           setShowForm(false);
-          setEditIndex(null);
           setForm({
-            timeOfInvestment: '', // Ahora inicia vacío
+            timeOfInvestment: '',
             investment: '',
             totalProfit: '',
             transactions: '',
@@ -355,128 +405,60 @@ export default function InvestmentTable() {
             enabled: false,
           });
         }
-      } catch (err) {
-        // Manejo de error opcional
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
-    try {
-      const res = await fetch(`${API_URL}${userId}/trading-bots`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(preparedForm),
-      });
-      const text = await res.text();
-      let json;
-      try {
-        json = JSON.parse(text);
-      } catch (err) {
-        setLoading(false);
-        return;
-      }
-      if (res.ok) {
-        setData(
-          (json.TradingBots || []).map((item: any) => {
-            const pair = PAIRS.find(p => p.value === (item.timeOfInvestment.label || item.timeOfInvestment || item.pair));
-            return {
-              ...item,
-              timeOfInvestment: pair
-                ? { icon: pair.icon, label: pair.label }
-                : typeof item.timeOfInvestment === 'object'
-                ? item.timeOfInvestment
-                : { icon: null, label: item.timeOfInvestment },
-            };
-          })
-        );
-        alert('Inversión actualizada correctamente');
-        setShowForm(false);
-        
-        setForm({
-          timeOfInvestment: '',
-          investment: '',
-          totalProfit: '',
-          transactions: '',
-          amountPerInvestment: '',
-          price: '',
-          avgBuyPrice: '',
-          bought: '',
-          enabled: false,
-          id: undefined, // <-- LIMPIA EL ID
-        });
-
       }
     } catch (err) {
-      // Manejo de error opcional
+      // manejo de error opcional
     } finally {
       setLoading(false);
     }
   }
 
-function editBot(index: number) {
-  if (userRole !== 'admin') return;
-  const bot = data[index];
+  function editBot(index: number) {
+    if (userRole !== 'admin') return;
+    const bot = data[index];
 
-  setForm({
-    timeOfInvestment: bot.timeOfInvestment,
-    investment: bot.investment || '',
-    totalProfit: bot.totalProfit || '',
-    transactions: bot.transactions || '',
-    amountPerInvestment: bot.amountPerInvestment || '',
-    price: bot.price || '',
-    avgBuyPrice: bot.avgBuyPrice || '',
-    bought: bot.bought || '',
-    enabled: bot.enabled ?? false,
-    userId: bot.userId,
-    email: bot.email || '',
-    id: bot.id, // <-- ESTA LÍNEA
-  });
+    setForm({
+      timeOfInvestment: bot.timeOfInvestment,
+      investment: bot.investment || '',
+      totalProfit: bot.totalProfit || '',
+      transactions: bot.transactions || '',
+      amountPerInvestment: bot.amountPerInvestment || '',
+      price: bot.price || '',
+      avgBuyPrice: bot.avgBuyPrice || '',
+      bought: bot.bought || '',
+      enabled: bot.enabled ?? false,
+      userId: bot.userId,
+      email: bot.email || '',
+      id: bot.id, // UUID del bot
+    });
 
+    setSelectedUserId(bot.userId || null);
+    setSelectedUserEmail(bot.email || '');
+    setEditIndex(index);
+    setShowForm(true);
+  }
 
-  setSelectedUserId(bot.userId || null); // ✅ precargar userId del bot
-  setSelectedUserEmail(bot.email || '');
-
-  setEditIndex(index);
-  setShowForm(true);
-}
-
-
+  // ✅ FIX 2: deleteBot usa bot.id (UUID) y el userId DUEÑO del bot, no del admin
   async function deleteBot(index: number) {
     if (!userId || userRole !== 'admin') return;
-    setLoading(true);
     const bot = data[index];
+    if (!bot.id || !bot.userId) {
+      alert('No se puede eliminar: datos del bot incompletos.');
+      return;
+    }
+    if (!confirm('¿Seguro que deseas eliminar este bot?')) return;
+    setLoading(true);
     try {
-      const res = await fetch(
-        `${API_URL}${ADMIN_ID}/trading-bots/${bot.id}`,
-        { method: 'DELETE' }
-      );
-      const text = await res.text();
-      let json: any;
-      try {
-        json = JSON.parse(text);
-      } catch {
-        setLoading(false);
-        return;
-      }
+      const res = await fetch(`${API_URL}${bot.userId}/trading-bots/${bot.id}`, {
+        method: 'DELETE',
+      });
       if (res.ok) {
-        setData(
-          (json.TradingBots || []).map((item: any) => {
-            const pair = PAIRS.find(p => p.value === (item.timeOfInvestment.label || item.timeOfInvestment || item.pair));
-            return {
-              ...item,
-              timeOfInvestment: pair
-                ? { icon: pair.icon, label: pair.label }
-                : typeof item.timeOfInvestment === 'object'
-                ? item.timeOfInvestment
-                : { icon: null, label: item.timeOfInvestment },
-            };
-          })
-        );
+        await reloadBots();
+      } else {
+        alert('Error al eliminar el bot.');
       }
-    } catch {
-      // opcional: mostrar error
+    } catch (err) {
+      // manejo de error opcional
     } finally {
       setLoading(false);
     }
@@ -484,20 +466,23 @@ function editBot(index: number) {
 
   async function handleToggleEnabled(index: number) {
     if (!userId) return;
+    const bot = data[index];
+    const newEnabled = !bot.enabled;
     const updated = [...data];
-    const current = updated[index];
-    const newEnabled = !current.enabled;
-    updated[index] = { ...current, enabled: newEnabled };
+    updated[index] = { ...bot, enabled: newEnabled };
     setData(updated);
 
+    const ownerUserId = userRole === 'admin' ? bot.userId : userId;
+    const botId = bot.id ?? index;
+
     try {
-      await fetch(`${API_URL}${userId}/trading-bots/${index}/toggle-enabled`, {
+      await fetch(`${API_URL}${ownerUserId}/trading-bots/${botId}/toggle-enabled`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ enabled: newEnabled }),
       });
     } catch (err) {
-      // Manejo de error opcional
+      // manejo de error opcional
     }
   }
 
@@ -538,7 +523,26 @@ function editBot(index: number) {
     <div className="relative">
       {userRole === 'admin' && (
         <div className="flex justify-end mb-4">
-          <Button onClick={() => { setShowForm(true); setEditIndex(null); }} className="bg-blue-600 text-white">
+          <Button
+            onClick={() => {
+              setShowForm(true);
+              setEditIndex(null);
+              setSelectedUserId(null);
+              setSelectedUserEmail('');
+              setForm({
+                timeOfInvestment: '',
+                investment: '',
+                totalProfit: '',
+                transactions: '',
+                amountPerInvestment: '',
+                price: '',
+                avgBuyPrice: '',
+                bought: '',
+                enabled: false,
+              });
+            }}
+            className="bg-blue-600 text-white"
+          >
             + Agregar inversión
           </Button>
         </div>
@@ -557,7 +561,6 @@ function editBot(index: number) {
               {editIndex !== null ? 'Editar inversión' : 'Agregar inversión'}
             </h3>
             <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
-              {/* s */}
               <div className="col-span-2 max-h-60 overflow-y-auto">
                 <select
                   name="userId"
@@ -565,7 +568,7 @@ function editBot(index: number) {
                   required
                   value={selectedUserId || ''}
                   onChange={handleUserChange}
-                  size={users.length > 8 ? 8 : undefined} // Muestra scroll si hay muchos usuarios
+                  size={users.length > 8 ? 8 : undefined}
                   style={{ minHeight: '40px' }}
                 >
                   <option value="" disabled>Seleccionar usuario</option>
@@ -574,7 +577,6 @@ function editBot(index: number) {
                   ))}
                 </select>
               </div>
-              {/* Campo de texto en vez de select para mercado */}
               <input
                 name="timeOfInvestment"
                 placeholder="Seleccionar mercado"
@@ -624,7 +626,7 @@ function editBot(index: number) {
               />
               <input
                 name="avgBuyPrice"
-                placeholder="Precio promedio de compra"
+                placeholder="Precio promedio compra"
                 value={form.avgBuyPrice}
                 onChange={handleChange}
                 className="rounded border px-3 py-2 text-sm dark:bg-gray-700 dark:text-white"
@@ -636,28 +638,53 @@ function editBot(index: number) {
                 onChange={handleChange}
                 className="rounded border px-3 py-2 text-sm dark:bg-gray-700 dark:text-white"
               />
-              <div className="col-span-2 flex items-center gap-2">
-                <label className="text-sm text-gray-700 dark:text-white">Encendido</label>
-                <input
-                  type="checkbox"
-                  name="enabled"
-                  checked={form.enabled}
-                  onChange={handleChange}
-                  className="h-4 w-4"
-                />
+              {/* Toggle Encendido/Apagado dentro del form */}
+              <div className="col-span-2 flex items-center gap-3 mt-1">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Estado del Bot:
+                </label>
+                <button
+                  type="button"
+                  onClick={() => setForm(prev => ({ ...prev, enabled: !prev.enabled }))}
+                  className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors focus:outline-none ${
+                    form.enabled ? 'bg-green-500' : 'bg-red-500'
+                  }`}
+                >
+                  <span
+                    className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${
+                      form.enabled ? 'translate-x-8' : 'translate-x-1'
+                    }`}
+                  />
+                </button>
+                <span className={`text-sm font-semibold ${form.enabled ? 'text-green-600' : 'text-red-500'}`}>
+                  {form.enabled ? '● Encendido' : '● Apagado'}
+                </span>
               </div>
-              <div className="col-span-2 flex justify-end">
-                <Button type="submit" className="bg-blue-600 text-white" disabled={loading}>
-                  {loading ? 'Guardando...' : editIndex !== null ? 'Actualizar' : 'Guardar'}
-                </Button>
+              <div className="col-span-2 flex justify-end gap-2 mt-2">
+                <button
+                  type="button"
+                  className="rounded border px-4 py-2 text-sm"
+                  onClick={() => { setShowForm(false); setEditIndex(null); }}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="rounded bg-blue-600 text-white px-4 py-2 text-sm"
+                  disabled={loading}
+                >
+                  {loading ? 'Guardando...' : editIndex !== null ? 'Actualizar' : 'Agregar'}
+                </button>
               </div>
             </form>
           </div>
         </div>
       )}
 
-      <InvestmentAccordionTable columns={columnsWithActions} data={data} />
+      <InvestmentAccordionTable
+        data={data}
+        columns={columnsWithActions}
+      />
     </div>
   );
 }
-

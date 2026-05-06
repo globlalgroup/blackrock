@@ -8,11 +8,15 @@ const multer = require('multer');
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'https://globalstockmarketssmltrd.site',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: [
+    'https://globalstockmarketssmltrd.site',
+    'https://www.globalstockmarketssmltrd.site',
+    'http://localhost:3000'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
-
 
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
@@ -25,7 +29,7 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: '¡Bienvenido al API de BlackRock! El servidor está funcionando correctamente.' });
 });
 
-const USERS_FILE = path.join(__dirname, 'src/data/users.json'); 
+const USERS_FILE = path.join(__dirname, 'src/data/users.json');
 const SALT_ROUNDS = 10;
 
 // 📌 Ruta para inicio de sesión (login)
@@ -63,7 +67,7 @@ app.post('/api/users', (req, res) => {
     balanceNFT: typeof req.body.balanceNFT === 'number' ? req.body.balanceNFT : 0,
     nfts: [],
     accounts: [],
-    profileImage: null, 
+    profileImage: null,
   };
 
   users.push(newUser);
@@ -367,6 +371,25 @@ app.delete('/api/users/:id/trading-bots/:botId', (req, res) => {
 
 
 
+// 📌 Toggle encendido/apagado de un TradingBot
+app.patch('/api/users/:id/trading-bots/:botId/toggle-enabled', (req, res) => {
+  const { id: userId, botId } = req.params;
+  const { enabled } = req.body;
+  let users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8')).users;
+  const userIndex = users.findIndex((user) => user.id === parseInt(userId));
+  if (userIndex === -1) {
+    return res.status(404).json({ error: 'Usuario no encontrado' });
+  }
+  const bots = users[userIndex].TradingBots || [];
+  const botIndex = bots.findIndex(bot => bot.id === botId);
+  if (botIndex === -1) {
+    return res.status(404).json({ error: 'TradingBot no encontrado' });
+  }
+  users[userIndex].TradingBots[botIndex].enabled = enabled;
+  fs.writeFileSync(USERS_FILE, JSON.stringify({ users }, null, 2));
+  res.json({ message: 'Estado actualizado', bot: users[userIndex].TradingBots[botIndex] });
+});
+
 // 📌 Cambiar contraseña de un usuario (validando contraseña actual en texto plano)
 app.put('/api/users/:id/password', (req, res) => {
   const userId = parseInt(req.params.id, 10);
@@ -387,7 +410,7 @@ app.put('/api/users/:id/password', (req, res) => {
   if (userIndex === -1) {
     return res.status(404).json({ error: 'Usuario no encontrado' });
   }
-  
+
   const user = data.users[userIndex];
 
   if (user.password !== currentPassword) {

@@ -6,18 +6,35 @@
       "email": "cardenas554santiago@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 1695,
-      "balanceNFT": 1695,
+      "balance": 2105,
+      "balanceNFT": 2105,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8824",
           "balance": 1682,
-          "valuation": 24,
-          "availableFunds": 1682
+          "valuation": 26,
+          "availableFunds": 2105,
+          "originalName": "ETF1-8824"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "18fc2338-9131-483b-9c59-a3856ec948cc",
+          "timeOfInvestment": "ETF 1-8850",
+          "investment": "1100",
+          "totalProfit": "89,91",
+          "transactions": "1",
+          "amountPerInvestment": "1100",
+          "price": "3.900",
+          "avgBuyPrice": "4.000",
+          "bought": "5",
+          "userId": 3619,
+          "email": "cardenas554santiago@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 8096,
@@ -49,7 +66,23 @@
           "originalName": "Retiro"
         }
       ],
-      "profileImage": "https://globalstockmarketssmltrd.site/profile-images/8096-1774975831940.jpg"
+      "profileImage": "https://globalstockmarketssmltrd.site/profile-images/8096-1774975831940.jpg",
+      "TradingBots": [
+        {
+          "id": "928c1686-94a7-498d-9765-e94760e35eb3",
+          "timeOfInvestment": "ETF 1-8850",
+          "investment": "4,700",
+          "totalProfit": "8,91",
+          "transactions": "1",
+          "amountPerInvestment": "4,700",
+          "price": "4.600",
+          "avgBuyPrice": "5.200",
+          "bought": "8",
+          "userId": 8096,
+          "email": "delmar.rengifo05@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 4924,
@@ -57,19 +90,35 @@
       "email": "edwinedgardorengifoperez851@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 636,
-      "balanceNFT": 636,
+      "balance": 685,
+      "balanceNFT": 685,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF-1304",
           "balance": 552,
-          "valuation": 23,
-          "availableFunds": 636,
+          "valuation": 22,
+          "availableFunds": 685,
           "originalName": "ETF-1304"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "cf85957f-45b0-4c47-aff3-a4a3c9f30b22",
+          "timeOfInvestment": "ETF 1-1304",
+          "investment": "552",
+          "totalProfit": "4,91",
+          "transactions": "1",
+          "amountPerInvestment": "552",
+          "price": "535",
+          "avgBuyPrice": "565",
+          "bought": "7",
+          "userId": 4924,
+          "email": "edwinedgardorengifoperez851@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 974,
@@ -77,15 +126,15 @@
       "email": "sae241100sae@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 307,
-      "balanceNFT": 307,
+      "balance": 329,
+      "balanceNFT": 329,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8850",
           "balance": 206,
           "valuation": 22,
-          "availableFunds": 307,
+          "availableFunds": 329,
           "originalName": "ETF1-8850"
         }
       ],
@@ -97,19 +146,35 @@
       "email": "munozjhoiner645@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 299,
-      "balanceNFT": 299,
+      "balance": 329,
+      "balanceNFT": 329,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8824",
           "balance": 205,
           "valuation": 21,
-          "availableFunds": 299,
+          "availableFunds": 329,
           "originalName": "ETF1-8824"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "46e020e9-78cd-4124-9d33-b2295c153618",
+          "timeOfInvestment": "ETF 1-8824",
+          "investment": "200",
+          "totalProfit": "2,91",
+          "transactions": "1",
+          "amountPerInvestment": "200",
+          "price": "185",
+          "avgBuyPrice": "215",
+          "bought": "8",
+          "userId": 4082,
+          "email": "munozjhoiner645@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 4497,
@@ -117,19 +182,35 @@
       "email": "andresuguer01@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 305,
-      "balanceNFT": 305,
+      "balance": 349,
+      "balanceNFT": 349,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8824",
           "balance": 210,
           "valuation": 23,
-          "availableFunds": 305,
+          "availableFunds": 349,
           "originalName": "ETF1-8824"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "f187fbbe-4c12-4b3b-b3d0-23b9ab6b91c0",
+          "timeOfInvestment": "ETF 1-8824",
+          "investment": "205",
+          "totalProfit": "3,91",
+          "transactions": "1",
+          "amountPerInvestment": "205",
+          "price": "200",
+          "avgBuyPrice": "220",
+          "bought": "8",
+          "userId": 4497,
+          "email": "andresuguer01@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 304,
@@ -137,19 +218,35 @@
       "email": "Christianjoselimamolano@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 668,
-      "balanceNFT": 668,
+      "balance": 695,
+      "balanceNFT": 695,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8850",
           "balance": 588,
           "valuation": 23,
-          "availableFunds": 668,
+          "availableFunds": 695,
           "originalName": "ETF1-8850"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "d0baee18-d3bb-4660-85a1-a063e9c54c8c",
+          "timeOfInvestment": "ETF 1-8850",
+          "investment": "588",
+          "totalProfit": "8,91",
+          "transactions": "1",
+          "amountPerInvestment": "588",
+          "price": "570",
+          "avgBuyPrice": "595",
+          "bought": "8",
+          "userId": 304,
+          "email": "Christianjoselimamolano@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 8990,
@@ -157,53 +254,92 @@
       "email": "Aldanacorreo841@gmail.com",
       "role": "user",
       "password": "ZcharickDaniela1.",
-      "balance": 838,
-      "balanceNFT": 838,
+      "balance": 879,
+      "balanceNFT": 879,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-9627 ",
           "balance": 835,
-          "valuation": 24,
-          "availableFunds": 838,
+          "valuation": 23,
+          "availableFunds": 879,
           "originalName": "ETF1-9627 "
         },
         {
           "name": "ETF1-9627 valorización",
           "balance": 549,
-          "valuation": 17,
-          "availableFunds": 549,
+          "valuation": 15,
+          "availableFunds": 604,
           "originalName": "ETF1-9627 valorización"
-        },
-        {
-          "name": "Retiro-Valorización",
-          "balance": 42,
-          "valuation": 0,
-          "availableFunds": 542,
-          "originalName": "Retiro-Valorización"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "af802040-6a45-46dc-b625-0ed085f4816d",
+          "timeOfInvestment": "ETF 1-9627",
+          "investment": "835",
+          "totalProfit": "7,91",
+          "transactions": "1",
+          "amountPerInvestment": "835",
+          "price": "800",
+          "avgBuyPrice": "850",
+          "bought": "8",
+          "userId": 8990,
+          "email": "Aldanacorreo841@gmail.com",
+          "enabled": true
+        },
+        {
+          "id": "20e5e6b2-2457-480e-bb23-9a9d35b13cd5",
+          "timeOfInvestment": "ETF 1-9627 Valorización",
+          "investment": "549",
+          "totalProfit": "5,910",
+          "transactions": "1",
+          "amountPerInvestment": "549",
+          "price": "530",
+          "avgBuyPrice": "560",
+          "bought": "8",
+          "userId": 8990,
+          "email": "Aldanacorreo841@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 7392,
       "username": "Oscar Andrés",
       "email": "ibagueoscarandres@gmail.com",
       "role": "user",
-      "password": "Aa1234",
-      "balance": 282,
-      "balanceNFT": 282,
+      "password": "Andriu$",
+      "balance": 439,
+      "balanceNFT": 439,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8850",
-          "balance": 213,
-          "valuation": 23,
-          "availableFunds": 282,
+          "balance": 435,
+          "valuation": 24,
+          "availableFunds": 439,
           "originalName": "ETF1-8850"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "494da0d2-f334-43aa-9542-84ea8886162e",
+          "timeOfInvestment": "ETF 1-8850",
+          "investment": "213",
+          "totalProfit": "8,00",
+          "transactions": "1",
+          "amountPerInvestment": "220",
+          "price": "210",
+          "avgBuyPrice": "230",
+          "bought": "1",
+          "userId": 7392,
+          "email": "ibagueoscarandres@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 5470,
@@ -211,19 +347,35 @@
       "email": "julojim23@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 405,
-      "balanceNFT": 405,
+      "balance": 538,
+      "balanceNFT": 538,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8850",
           "balance": 286,
           "valuation": 25,
-          "availableFunds": 405,
+          "availableFunds": 538,
           "originalName": "ETF1-8850"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "0230e438-5112-4dd2-aabd-e61b8fe50eb4",
+          "timeOfInvestment": "ETF 1-8850",
+          "investment": "286",
+          "totalProfit": "3,91",
+          "transactions": "1",
+          "amountPerInvestment": "286",
+          "price": "270",
+          "avgBuyPrice": "295",
+          "bought": "8",
+          "userId": 5470,
+          "email": "julojim23@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 1984,
@@ -231,19 +383,35 @@
       "email": "carlosjavierserrano12345@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 932,
-      "balanceNFT": 932,
+      "balance": 963,
+      "balanceNFT": 963,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-9627 ",
           "balance": 845,
           "valuation": 22,
-          "availableFunds": 932,
+          "availableFunds": 963,
           "originalName": "ETF1-9627 "
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "5ef51852-876a-471d-a1a0-0e38788d5eb9",
+          "timeOfInvestment": "ETF 1-9627",
+          "investment": "845",
+          "totalProfit": "5,910",
+          "transactions": "1",
+          "amountPerInvestment": "845",
+          "price": "800",
+          "avgBuyPrice": "860",
+          "bought": "8",
+          "userId": 1984,
+          "email": "carlosjavierserrano12345@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 6354,
@@ -251,19 +419,35 @@
       "email": "sara.carsp@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 516,
-      "balanceNFT": 516,
+      "balance": 538,
+      "balanceNFT": 538,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8850",
           "balance": 476,
-          "valuation": 24,
-          "availableFunds": 516,
+          "valuation": 23,
+          "availableFunds": 538,
           "originalName": "ETF1-8850"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "a87e968a-2ccc-4099-b4e9-5efc95631d98",
+          "timeOfInvestment": "ETF 1-8850",
+          "investment": "470",
+          "totalProfit": "7,91",
+          "transactions": "2",
+          "amountPerInvestment": "470",
+          "price": "450",
+          "avgBuyPrice": "480",
+          "bought": "8",
+          "userId": 6354,
+          "email": "sara.carsp@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 179,
@@ -271,31 +455,35 @@
       "email": "eliza1228q@gmail.com",
       "role": "user",
       "password": "Aa1234",
-      "balance": 262,
-      "balanceNFT": 262,
+      "balance": 288,
+      "balanceNFT": 288,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8850",
           "balance": 218,
           "valuation": 23,
-          "availableFunds": 262,
+          "availableFunds": 288,
           "originalName": "ETF1-8850"
         }
       ],
-      "profileImage": null
-    },
-    {
-      "id": 630,
-      "username": "Luis Bartolo Rojas",
-      "email": "lrojasvera350@gmail.com",
-      "role": "user",
-      "password": "1234",
-      "balance": 2710500,
-      "balanceNFT": 2710500,
-      "nfts": [],
-      "accounts": [],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "5a14c406-fc9a-4a5b-8b25-33eb49810e87",
+          "timeOfInvestment": "ETF 1-8850",
+          "investment": "218",
+          "totalProfit": "5,91",
+          "transactions": "1",
+          "amountPerInvestment": "218",
+          "price": "200",
+          "avgBuyPrice": "230",
+          "bought": "8",
+          "userId": 179,
+          "email": "eliza1228q@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 8884,
@@ -303,19 +491,35 @@
       "email": "visaby30habe@gmail.com",
       "role": "user",
       "password": "beidy3",
-      "balance": 219,
-      "balanceNFT": 219,
+      "balance": 273,
+      "balanceNFT": 273,
       "nfts": [],
       "accounts": [
         {
           "name": "ETF1-8884",
           "balance": 217,
           "valuation": 23,
-          "availableFunds": 219,
+          "availableFunds": 273,
           "originalName": "ETF1-8884"
         }
       ],
-      "profileImage": null
+      "profileImage": null,
+      "TradingBots": [
+        {
+          "id": "ddbd2b9c-a056-4346-ac66-e77dfd48fc3f",
+          "timeOfInvestment": "ETF 1-8884",
+          "investment": "200",
+          "totalProfit": "6,91",
+          "transactions": "1",
+          "amountPerInvestment": "200",
+          "price": "190",
+          "avgBuyPrice": "215",
+          "bought": "8",
+          "userId": 8884,
+          "email": "visaby30habe@gmail.com",
+          "enabled": true
+        }
+      ]
     },
     {
       "id": 8256,
@@ -327,140 +531,64 @@
       "balanceNFT": 22,
       "nfts": [],
       "accounts": [],
-      "profileImage": null,
-      "TradingBots": [
-        {
-          "id": "f41e136c-8301-4d14-879f-2a5f6a1fdc0a",
-          "timeOfInvestment": "ETF 1-8850",
-          "investment": "4,700",
-          "totalProfit": "6,91",
-          "transactions": "1",
-          "amountPerInvestment": "4,700",
-          "price": "3.900",
-          "avgBuyPrice": "4.000",
-          "bought": "3",
-          "userId": 3619,
-          "email": "cardenas554santiago@gmail.com"
-        },
-        {
-          "id": "6933ebd2-5c08-4229-873e-622dd85531d4",
-          "timeOfInvestment": "ETF 1-8850",
-          "investment": "600",
-          "totalProfit": "6,912",
-          "transactions": "1",
-          "amountPerInvestment": "600",
-          "price": "3.900",
-          "avgBuyPrice": "4.000",
-          "bought": "8",
-          "userId": 8990,
-          "email": "Aldanacorreo841@gmail.com"
-        },
-        {
-          "id": "14b2d84f-d430-49b8-9568-5d32edeac552",
-          "timeOfInvestment": "ETF 1-8850",
-          "investment": "4,700",
-          "totalProfit": "001",
-          "transactions": "1",
-          "amountPerInvestment": "5,000",
-          "price": "3.900",
-          "avgBuyPrice": "4.300",
-          "bought": "5",
-          "userId": 4497,
-          "email": "andresuguer01@gmail.com"
-        },
-        {
-          "id": "e5c0a590-abb1-41f1-8c9d-65526322ffea",
-          "timeOfInvestment": "hol",
-          "investment": "11",
-          "totalProfit": "11",
-          "transactions": "1",
-          "amountPerInvestment": "111",
-          "price": "11",
-          "avgBuyPrice": "1",
-          "bought": "1",
-          "userId": 8096,
-          "email": "delmar.rengifo05@gmail.com"
-        },
-        {
-          "id": "640e4b98-f857-48ad-a4c3-2ed083215f63",
-          "timeOfInvestment": "holiii",
-          "investment": "11",
-          "totalProfit": "11",
-          "transactions": "1",
-          "amountPerInvestment": "111",
-          "price": "11",
-          "avgBuyPrice": "1",
-          "bought": "1",
-          "userId": 8256,
-          "email": "usuario1@email.com"
-        },
-        {
-          "id": "3425fb2b-c999-4bbf-94e8-9549dece93b9",
-          "timeOfInvestment": "como estas",
-          "investment": "11",
-          "totalProfit": "111",
-          "transactions": "11",
-          "amountPerInvestment": "11",
-          "price": "11",
-          "avgBuyPrice": "1",
-          "bought": "1",
-          "userId": 8096,
-          "email": "delmar.rengifo05@gmail.com"
-        },
-        {
-          "id": "08658e00-3ba6-42a5-a310-cad097150db4",
-          "timeOfInvestment": "Trd",
-          "investment": "22",
-          "totalProfit": "333",
-          "transactions": "4",
-          "amountPerInvestment": "300",
-          "price": "222",
-          "avgBuyPrice": "222",
-          "bought": "2",
-          "userId": 3619,
-          "email": "cardenas554santiago@gmail.com"
-        },
-        {
-          "id": "c3bb0d35-0012-4178-a56b-a28bfe68d3dc",
-          "timeOfInvestment": "ETF 1-8850",
-          "investment": "600",
-          "totalProfit": "6,910",
-          "transactions": "1",
-          "amountPerInvestment": "600",
-          "price": "3.900",
-          "avgBuyPrice": "4.300",
-          "bought": "8",
-          "userId": 8990,
-          "email": "Aldanacorreo841@gmail.com"
-        }
-      ]
+      "profileImage": "https://globalstockmarketssmltrd.site/profile-images/8256-1776220019145.jpg",
+      "TradingBots": []
     },
     {
-      "id": 6114,
-      "username": "CESAR 2",
-      "email": "blackrock.groupx@gmail.com",
+      "id": 1168,
+      "username": "Mateo Tamayo",
+      "email": "mateovacunacioncovid19@gmail.com",
+      "role": "user",
+      "password": "1234",
+      "balance": 65000,
+      "balanceNFT": 65000,
+      "nfts": [],
+      "accounts": [
+        {
+          "name": "Tesla",
+          "balance": 5400,
+          "valuation": 21,
+          "availableFunds": 5400
+        },
+        {
+          "name": "Oro (GCM3)",
+          "balance": 3500,
+          "valuation": 20,
+          "availableFunds": 3500
+        },
+        {
+          "name": "Retiro-Valorización",
+          "balance": 2300,
+          "valuation": 22,
+          "availableFunds": 2300
+        }
+      ],
+      "profileImage": "https://globalstockmarketssmltrd.site/profile-images/1168-1776268292649.jpg",
+      "TradingBots": []
+    },
+    {
+      "id": 1154,
+      "username": "CESAR admin",
+      "email": "cesardiazcybercapital@gmail.com",
       "role": "admin",
       "password": "1234",
-      "balance": 99,
-      "balanceNFT": 99,
+      "balance": 3444,
+      "balanceNFT": 3444,
       "nfts": [],
       "accounts": [],
-      "profileImage": "https://globalstockmarketssmltrd.site/profile-images/6114-1775780503931.jpg",
-      "TradingBots": [
-        {
-          "id": "31526972-d08d-4e20-89d8-0010e9ba1abb",
-          "timeOfInvestment": "tred ",
-          "investment": "233",
-          "totalProfit": "23",
-          "transactions": "2",
-          "amountPerInvestment": "333",
-          "price": "4500",
-          "avgBuyPrice": "38823",
-          "bought": "2",
-          "userId": 8256,
-          "email": "usuario1@email.com"
-        }
-      ]
+      "profileImage": null
+    },
+    {
+      "id": 8164,
+      "username": "Yony Gomez",
+      "email": "Yonyg793@gmail.com",
+      "role": "user",
+      "password": "Aa1234",
+      "balance": 19,
+      "balanceNFT": 19,
+      "nfts": [],
+      "accounts": [],
+      "profileImage": null
     }
   ]
 }

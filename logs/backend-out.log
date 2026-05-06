@@ -1,0 +1,26 @@
+2026-04-15 01:28 +00:00: Servidor corriendo en http://localhost:3002
+2026-04-15 01:59 +00:00: Servidor corriendo en http://localhost:3002
+2026-04-15 02:26 +00:00: 📸 Imagen recibida: {
+2026-04-15 02:26 +00:00:   fieldname: 'image',
+2026-04-15 02:26 +00:00:   originalname: 'logo encabezado 2.jpg',
+2026-04-15 02:26 +00:00:   encoding: '7bit',
+2026-04-15 02:26 +00:00:   mimetype: 'image/jpeg',
+2026-04-15 02:26 +00:00:   destination: '/home/deploy/blackrock/public/profile-images',
+2026-04-15 02:26 +00:00:   filename: '8256-1776220019145.jpg',
+2026-04-15 02:26 +00:00:   path: '/home/deploy/blackrock/public/profile-images/8256-1776220019145.jpg',
+2026-04-15 02:26 +00:00:   size: 377019
+2026-04-15 02:26 +00:00: }
+2026-04-15 15:51 +00:00: 📸 Imagen recibida: {
+2026-04-15 15:51 +00:00:   fieldname: 'image',
+2026-04-15 15:51 +00:00:   originalname: 'IMG_20251126_094243_edit_108187229604249.jpg',
+2026-04-15 15:51 +00:00:   encoding: '7bit',
+2026-04-15 15:51 +00:00:   mimetype: 'image/jpeg',
+2026-04-15 15:51 +00:00:   destination: '/home/deploy/blackrock/public/profile-images',
+2026-04-15 15:51 +00:00:   filename: '1168-1776268292649.jpg',
+2026-04-15 15:51 +00:00:   path: '/home/deploy/blackrock/public/profile-images/1168-1776268292649.jpg',
+2026-04-15 15:51 +00:00:   size: 1762053
+2026-04-15 15:51 +00:00: }
+2026-04-15 16:19 +00:00: Servidor corriendo en http://localhost:3002
+2026-04-16 00:11 +00:00: Servidor corriendo en http://localhost:3002
+2026-04-16 00:34 +00:00: Servidor corriendo en http://localhost:3002
+2026-04-21 15:55 +00:00: Servidor corriendo en http://localhost:3002
